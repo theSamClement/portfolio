@@ -112,26 +112,31 @@ export default function HomePage() {
 
           <div className="project">
             <div className="title char-effect" id="project2">PROJECT 2</div>
-            <div className="description">producing house music bc i love it (soundcloud.com)<a href="https://soundcloud.com/samcclement" target="_blank" rel="noopener noreferrer" className="char-effect" id="link2">View Project</a></div>
+            <div className="description">getting your security deposit back (docos.io)<a href="https://kasii.tech" target="_blank" rel="noopener noreferrer" className="char-effect" id="link1">View Project</a></div>
           </div>
 
           <div className="project">
             <div className="title char-effect" id="project3">PROJECT 3</div>
-            <div className="description">automating label outreach for small but passionate artists (trackpitch.io)<a href="https://trackpitch.io" target="_blank" rel="noopener noreferrer" className="char-effect" id="link3">View Project</a></div>
+            <div className="description">producing house music bc i love it (soundcloud.com)<a href="https://soundcloud.com/samcclement" target="_blank" rel="noopener noreferrer" className="char-effect" id="link2">View Project</a></div>
           </div>
 
           <div className="project">
             <div className="title char-effect" id="project4">PROJECT 4</div>
-            <div className="description">functioning RISC-V cpu built from 1s and 0s (samclement@berkeley.edu)<a href="mailto:samclement@berkeley.edu" className="char-effect" id="link4">View Project</a></div>
+            <div className="description">automating label outreach for small but passionate artists (trackpitch.io)<a href="https://trackpitch.io" target="_blank" rel="noopener noreferrer" className="char-effect" id="link3">View Project</a></div>
           </div>
 
           <div className="project">
             <div className="title char-effect" id="project5">PROJECT 5</div>
-            <div className="description">helping writers rough draft a little easier (getwrito.com)<a href="https://getwrito.com" target="_blank" rel="noopener noreferrer" className="char-effect" id="link5">View Project</a></div>
+            <div className="description">functioning RISC-V cpu built from 1s and 0s (samclement@berkeley.edu)<a href="mailto:samclement@berkeley.edu" className="char-effect" id="link4">View Project</a></div>
           </div>
 
           <div className="project">
             <div className="title char-effect" id="project6">PROJECT 6</div>
+            <div className="description">helping writers rough draft a little easier (getwrito.com)<a href="https://getwrito.com" target="_blank" rel="noopener noreferrer" className="char-effect" id="link5">View Project</a></div>
+          </div>
+
+          <div className="project">
+            <div className="title char-effect" id="project7">PROJECT 7</div>
             <div className="description">managing your network systematically (netwyrk.me)<a href="https://netwyrk.me" target="_blank" rel="noopener noreferrer" className="char-effect" id="link6">View Project</a></div>
           </div>
 

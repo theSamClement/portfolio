@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Simple S shape with a clean, minimal design -->
+  <path 
+    d="M75,30 C75,18 65,10 50,10 C35,10 25,18 25,30 C25,45 75,45 75,70 C75,82 65,90 50,90 C35,90 25,82 25,70"
+    fill="none"
+    stroke="black"
+    stroke-width="6"
+    stroke-linecap="round"
+  />
+</svg>
