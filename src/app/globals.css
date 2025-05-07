@@ -73,6 +73,13 @@ a:hover {
     margin-left: 1rem;
 }
 
+.project-description-text {
+  font-weight: 500; /* Slightly bolder */
+  color: #2a2a2a;   /* A darker gray */
+  display: block; /* Ensures it takes its own line if needed */
+  margin-bottom: 0.25rem; /* Adds a small space before the View Project link */
+}
+
 /* The cool character effect */
 .char-effect {
     display: inline-block;
