@@ -1,3 +1,5 @@
+"use client";
+
 import Head from 'next/head';
 import { useEffect } from 'react';
 
@@ -45,6 +47,7 @@ export default function HomePage() {
     // Also, querySelectorAll might be safer than iterating childNodes directly if the DOM structure is complex or changes.
 
     // Let's try to make this idempotent by checking if it has already run.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     if (!(window as any).__charEffectApplied) {
       const bodyElement = document.body;
       const childNodes = Array.from(bodyElement.childNodes);
@@ -84,6 +87,7 @@ export default function HomePage() {
         }
       }
 
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any).__charEffectApplied = true;
     }
 
