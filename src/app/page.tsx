@@ -112,7 +112,7 @@ export default function HomePage() {
 
           <div className="project">
             <div className="title char-effect" id="project2">PROJECT 2</div>
-            <div className="description">getting your security deposit back (docos.io)<a href="https://kasii.tech" target="_blank" rel="noopener noreferrer" className="char-effect" id="link1">View Project</a></div>
+            <div className="description">getting your security deposit back (docor.io)<a href="https://docor.io" target="_blank" rel="noopener noreferrer" className="char-effect" id="link1">View Project</a></div>
           </div>
 
           <div className="project">
