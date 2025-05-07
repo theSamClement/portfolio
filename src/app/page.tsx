@@ -95,7 +95,7 @@ export default function HomePage() {
           <div className="project">
             <div className="title char-effect" id="project4">PROJECT 4</div>
             <div className="description">
-              <div className="project-description-text">automating label outreach for small but passionate artists <a href="https://trackpitch.io" target="_blank" rel="noopener noreferrer" className="char-effect">(trackpitch.io)</a></div>
+              <div className="project-description-text">automating label outreach for small artists <a href="https://trackpitch.io" target="_blank" rel="noopener noreferrer" className="char-effect">(trackpitch.io)</a></div>
             </div>
           </div>
 
@@ -117,6 +117,13 @@ export default function HomePage() {
             <div className="title char-effect" id="project7">PROJECT 7</div>
             <div className="description">
               <div className="project-description-text">managing your network systematically <a href="https://netwyrk.me" target="_blank" rel="noopener noreferrer" className="char-effect">(netwyrk.me)</a></div>
+            </div>
+          </div>
+
+          <div className="project">
+            <div className="title char-effect" id="project>">NEXT PROJECT???</div>
+            <div className="description">
+              <div className="project-description-text">have a good idea? interested in something i've done? wanna buy me an americano?<a href="mailto:samclement@berkeley.edu" target="_blank" rel="noopener noreferrer" className="char-effect">(shoot me an email)</a></div>
             </div>
           </div>
 
