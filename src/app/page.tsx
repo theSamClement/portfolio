@@ -120,19 +120,12 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="project">
-            <div className="title char-effect" id="project>">NEXT PROJECT???</div>
-            <div className="description">
-              <div className="project-description-text">have a good idea? interested in something i&apos;ve done? wanna buy me an americano? <a href="mailto:samclement@berkeley.edu" target="_blank" rel="noopener noreferrer" className="char-effect">(shoot me an email)</a></div>
-            </div>
-          </div>
-
         </div>
 
         <div className="container">
-          <div className="title char-effect" id="contact">CONTACT</div>
+          <div className="title char-effect" id="contact">BUY ME AN AMERICANO?</div>
           <div className="description">
-            <a href="mailto:samclement@berkeley.edu" className="char-effect" id="email">sam@berkeley.edu</a> |{' '}
+            <a href="mailto:samclement@berkeley.edu" className="char-effect" id="email">samclement@berkeley.edu</a> |{' '}
             <a href="https://github.com/theSamClement" className="char-effect" id="github"> GitHub</a> |{' '}
             <a href="https://www.linkedin.com/in/samcclement/" className="char-effect" id="linkedin">LinkedIn</a>
           </div>
