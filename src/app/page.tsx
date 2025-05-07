@@ -94,35 +94,51 @@ export default function HomePage() {
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Minimal Portfolio</title>
+        <title>samcclement</title>
         {/* Styles are in globals.css */}
       </Head>
       <div id="portfolio-page-container"> {/* Added a wrapper for the script to target */} 
-        <h1 className="char-effect" id="title">MY PORTFOLIO</h1>
+        <h1 className="char-effect" id="title">my portfolio</h1>
 
         <div className="container">
           <div className="project">
             <div className="title char-effect" id="project1">PROJECT 1</div>
-            <div className="description">An innovative web application that <span className="glitch">revolutionizes</span> how people interact with data. <a href="#" className="char-effect" id="link1">View Project</a></div>
+            <div className="description">making early-stage hiring more fair (kasii.tech)<span className="glitch">revolutionizes</span> how people interact with data. <a href="#" className="char-effect" id="link1">View Project</a></div>
           </div>
 
           <div className="project">
             <div className="title char-effect" id="project2">PROJECT 2</div>
-            <div className="description">A minimalist approach to solving complex problems with elegant solutions. <a href="#" className="char-effect" id="link2">View Project</a></div>
+            <div className="description">producing house music bc i love it (soundcloud.com)<a href="#" className="char-effect" id="link2">View Project</a></div>
           </div>
 
           <div className="project">
             <div className="title char-effect" id="project3">PROJECT 3</div>
-            <div className="description">Experimental design concepts that challenge conventional thinking. <a href="#" className="char-effect" id="link3">View Project</a></div>
+            <div className="description">automating label outreach for small but passionate artists (trackpitch.io)<a href="#" className="char-effect" id="link3">View Project</a></div>
           </div>
+
+          <div className="project">
+            <div className="title char-effect" id="project4">PROJECT 4</div>
+            <div className="description">functioning RISC-V cpu built from 1s and 0s (samclement@berkeley.edu)<a href="#" className="char-effect" id="link3">View Project</a></div>
+          </div>
+
+          <div className="project">
+            <div className="title char-effect" id="project5">PROJECT 5</div>
+            <div className="description">helping writers rough draft a little easier (getwrito.com)<a href="#" className="char-effect" id="link3">View Project</a></div>
+          </div>
+
+          <div className="project">
+            <div className="title char-effect" id="project6">PROJECT 6</div>
+            <div className="description">managing your network systematically (netwyrk.me)<a href="#" className="char-effect" id="link3">View Project</a></div>
+          </div>
+
         </div>
 
         <div className="container">
           <div className="title char-effect" id="contact">CONTACT</div>
           <div className="description">
-            <a href="mailto:example@example.com" className="char-effect" id="email">example@example.com</a> | 
-            <a href="https://github.com/" className="char-effect" id="github">GitHub</a> | 
-            <a href="https://linkedin.com/" className="char-effect" id="linkedin">LinkedIn</a>
+            <a href="mailto:samclement@berkeley.edu" className="char-effect" id="email">example@example.com</a> | 
+            <a href="https://github.com/theSamClement" className="char-effect" id="github">GitHub</a> | 
+            <a href="https://www.linkedin.com/in/samcclement/" className="char-effect" id="linkedin">LinkedIn</a>
           </div>
         </div>
         {/* The cursor element is CSS-only, so it does not need script intervention if placed directly */}
