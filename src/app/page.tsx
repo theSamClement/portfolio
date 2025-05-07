@@ -102,42 +102,63 @@ export default function HomePage() {
         {/* Styles are in globals.css */}
       </Head>
       <div id="portfolio-page-container"> {/* Added a wrapper for the script to target */} 
-        <h1 className="char-effect" id="title">my portfolio</h1>
+        <h1 className="char-effect" id="title">portfolio</h1>
 
         <div className="container">
           <div className="project">
             <div className="title char-effect" id="project1">PROJECT 1</div>
-            <div className="description">making early-stage hiring more fair (kasii.tech)<a href="https://kasii.tech" target="_blank" rel="noopener noreferrer" className="char-effect" id="link1">View Project</a></div>
+            <div className="description">
+              <div>making early-stage hiring more fair (kasii.tech)</div>
+              <div><a href="https://kasii.tech" target="_blank" rel="noopener noreferrer" className="char-effect" id="link1">View Project</a></div>
+            </div>
           </div>
 
           <div className="project">
             <div className="title char-effect" id="project2">PROJECT 2</div>
-            <div className="description">getting your security deposit back (docor.io)<a href="https://docor.io" target="_blank" rel="noopener noreferrer" className="char-effect" id="link1">View Project</a></div>
+            <div className="description">
+              <div>getting your security deposit back (docor.io)</div>
+              <div><a href="https://docor.io" target="_blank" rel="noopener noreferrer" className="char-effect" id="link2">View Project</a></div>
+            </div>
           </div>
 
           <div className="project">
             <div className="title char-effect" id="project3">PROJECT 3</div>
-            <div className="description">producing house music bc i love it (soundcloud.com)<a href="https://soundcloud.com/samcclement" target="_blank" rel="noopener noreferrer" className="char-effect" id="link2">View Project</a></div>
+            <div className="description">
+              <div>producing house music bc i love it (soundcloud.com)</div>
+              <div><a href="https://soundcloud.com/samcclement" target="_blank" rel="noopener noreferrer" className="char-effect" id="link3">View Project</a></div>
+            </div>
           </div>
 
           <div className="project">
             <div className="title char-effect" id="project4">PROJECT 4</div>
-            <div className="description">automating label outreach for small but passionate artists (trackpitch.io)<a href="https://trackpitch.io" target="_blank" rel="noopener noreferrer" className="char-effect" id="link3">View Project</a></div>
+            <div className="description">
+              <div>automating label outreach for small artists (trackpitch.io)</div>
+              <div><a href="https://trackpitch.io" target="_blank" rel="noopener noreferrer" className="char-effect" id="link4">View Project</a></div>
+            </div>
           </div>
 
           <div className="project">
             <div className="title char-effect" id="project5">PROJECT 5</div>
-            <div className="description">functioning RISC-V cpu built from 1s and 0s (samclement@berkeley.edu)<a href="mailto:samclement@berkeley.edu" className="char-effect" id="link4">View Project</a></div>
+            <div className="description">
+              <div>functioning RISC-V cpu built from 1s and 0s (samclement@berkeley.edu)</div>
+              <div><a href="mailto:samclement@berkeley.edu" className="char-effect" id="link5">View Project</a></div>
+            </div>
           </div>
 
           <div className="project">
             <div className="title char-effect" id="project6">PROJECT 6</div>
-            <div className="description">helping writers rough draft a little easier (getwrito.com)<a href="https://getwrito.com" target="_blank" rel="noopener noreferrer" className="char-effect" id="link5">View Project</a></div>
+            <div className="description">
+              <div>helping writers rough draft a little easier (getwrito.com)</div>
+              <div><a href="https://getwrito.com" target="_blank" rel="noopener noreferrer" className="char-effect" id="link6">View Project</a></div>
+            </div>
           </div>
 
           <div className="project">
             <div className="title char-effect" id="project7">PROJECT 7</div>
-            <div className="description">managing your network systematically (netwyrk.me)<a href="https://netwyrk.me" target="_blank" rel="noopener noreferrer" className="char-effect" id="link6">View Project</a></div>
+            <div className="description">
+              <div>managing your network systematically (netwyrk.me)</div>
+              <div><a href="https://netwyrk.me" target="_blank" rel="noopener noreferrer" className="char-effect" id="link7">View Project</a></div>
+            </div>
           </div>
 
         </div>
@@ -145,14 +166,14 @@ export default function HomePage() {
         <div className="container">
           <div className="title char-effect" id="contact">CONTACT</div>
           <div className="description">
-            <a href="mailto:samclement@berkeley.edu" className="char-effect" id="email">example@example.com</a> | 
-            <a href="https://github.com/theSamClement" className="char-effect" id="github">GitHub</a> | 
+            <a href="mailto:samclement@berkeley.edu" className="char-effect" id="email">sam@berkeley.edu</a> |{' '}
+            <a href="https://github.com/theSamClement" className="char-effect" id="github"> GitHub</a> |{' '}
             <a href="https://www.linkedin.com/in/samcclement/" className="char-effect" id="linkedin">LinkedIn</a>
           </div>
         </div>
         {/* The cursor element is CSS-only, so it does not need script intervention if placed directly */}
         {/* Example: <span className="cursor"></span> after a title if desired */}
-      </div>
+    </div>
     </>
   );
 }
