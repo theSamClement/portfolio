@@ -88,7 +88,7 @@ export default function HomePage() {
           <div className="project">
             <div className="title char-effect" id="project3">PROJECT 3</div>
             <div className="description">
-              <div className="project-description-text">producing house music bc i love it <a href="https://soundcloud.com/samcclement" target="_blank" rel="noopener noreferrer" className="char-effect">(soundcloud.com)</a></div>
+              <div className="project-description-text">producing house music when i have a minute <a href="https://soundcloud.com/samcclement" target="_blank" rel="noopener noreferrer" className="char-effect">(soundcloud.com)</a></div>
             </div>
           </div>
 
