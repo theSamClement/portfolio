@@ -1,0 +1,497 @@
+/*
+ * Scoped styles for the /music press kit — hybrid: dark base + bold accents,
+ * structure informed by keinemusik.com (right vertical nav, cover-art releases,
+ * watermark contact).
+ *
+ * NON-BREAKING GUARANTEES (unchanged from before):
+ *  - CSS Module: Next code-splits it, so it only loads on /music.
+ *  - .root is position:fixed;inset:0 — a full-viewport overlay that ignores the
+ *    global body's white bg / max-width / padding. We override nothing global.
+ *  - Design tokens live on .root, not :root, so nothing leaks.
+ *  - The only !important scopes global `a{}` resets to this route's subtree.
+ */
+
+.root {
+  position: fixed;
+  inset: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  --bg: #141210;
+  --ink: #ece6da;
+  --soft: #8b8478;
+  --rule: rgba(236, 230, 218, 0.16);
+  --rule-soft: rgba(236, 230, 218, 0.09);
+
+  /* per-section accents */
+  --a-sets: #f2c14e; /* gold */
+  --a-rel: #e8583c;  /* red-orange */
+  --a-con: #5aa9e6;  /* blue */
+
+  --disp: var(--font-oswald), 'Arial Narrow', 'Helvetica Neue', sans-serif;
+
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-space-grotesk), 'Helvetica Neue', Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.root a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.wrap {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* ---------- header / chrome (mobile default: in flow) ---------- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 30px 0 6px;
+}
+.wordmark {
+  min-width: 0;
+}
+.wm {
+  font-family: var(--disp);
+  font-weight: 700;
+  font-size: clamp(22px, 4vw, 30px);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+}
+.role {
+  display: block;
+  margin-top: 8px;
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  text-align: right;
+  flex-shrink: 0;
+}
+.nav a {
+  font-family: var(--disp);
+  font-weight: 600;
+  font-size: clamp(16px, 2.4vw, 21px);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.25;
+  transition: color 0.2s;
+}
+.navSets:hover { color: var(--a-sets) !important; }
+.navRel:hover { color: var(--a-rel) !important; }
+.navCon:hover { color: var(--a-con) !important; }
+
+/* ---------- sections ---------- */
+.section {
+  padding: 54px 0;
+  border-top: 1px solid var(--rule-soft);
+  scroll-margin-top: 24px; /* anchor jumps land with breathing room */
+}
+.section:first-of-type {
+  border-top: 0;
+  padding-top: 30px;
+}
+.h {
+  font-family: var(--disp);
+  font-weight: 700;
+  font-size: clamp(38px, 8vw, 66px);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 0.95;
+  margin: 0 0 30px;
+}
+.sets .h { color: var(--a-sets); }
+.releases .h { color: var(--a-rel); }
+.contact .h { color: var(--a-con); }
+
+/* ---------- demo sets (SoundCloud players) ---------- */
+.mix {
+  margin-bottom: 26px;
+}
+.mix:last-child {
+  margin-bottom: 0;
+}
+.cap {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.side {
+  font-family: var(--disp);
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  /* rendered as a <button> that opens the tracklist — reset so it stays
+     visually identical to the plain label; only the cursor hints at the click. */
+  -webkit-appearance: none;
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  line-height: inherit;
+  cursor: pointer;
+}
+.meta {
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--soft);
+  white-space: nowrap;
+}
+/* "framed + dissolve": crisp hairline frame defines the boundary; the
+   grayscale/dimmed artwork vignettes + masks inward so it dissolves toward
+   the frame rather than ending on a hard line. */
+.player {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(236, 230, 218, 0.2);
+}
+.player::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 60px 22px var(--bg);
+}
+.player iframe {
+  display: block;
+  border: 0;
+  width: 100%;
+  height: 325px;
+  margin-top: -5px;
+  filter: grayscale(1) contrast(1.08) brightness(0.8);
+  -webkit-mask:
+    linear-gradient(to right, transparent, #000 20px, #000 calc(100% - 20px), transparent),
+    linear-gradient(to bottom, transparent, #000 20px, #000 calc(100% - 20px), transparent);
+  -webkit-mask-composite: source-in;
+  mask:
+    linear-gradient(to right, transparent, #000 20px, #000 calc(100% - 20px), transparent),
+    linear-gradient(to bottom, transparent, #000 20px, #000 calc(100% - 20px), transparent);
+  mask-composite: intersect;
+}
+
+/* ---------- releases (cover art + link) ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px 22px;
+}
+.release {
+  display: block;
+}
+.coverWrap {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #0c0b0a;
+}
+.cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.95) brightness(0.94);
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+.release:hover .cover {
+  transform: scale(1.045);
+  filter: saturate(1.12) brightness(1.05);
+}
+.rtitle {
+  margin-top: 13px;
+  font-size: 20px;
+  line-height: 1.2;
+}
+.rmeta {
+  margin-top: 4px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--soft);
+  transition: color 0.2s;
+}
+.release:hover .rmeta {
+  color: var(--a-rel);
+}
+
+/* ---------- contact ---------- */
+.contactInner {
+  position: relative;
+  text-align: center;
+  padding: 92px 0 76px;
+  overflow: hidden; /* clips only the watermark's horizontal bleed, never its height */
+}
+.watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+  font-family: var(--disp);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(56px, 15vw, 146px);
+  line-height: 1;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  color: rgba(236, 230, 218, 0.055);
+}
+.cLines {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.cLine {
+  font-size: clamp(18px, 2.4vw, 23px);
+}
+.cLabel {
+  color: var(--soft);
+}
+.cLink {
+  border-bottom: 1px solid var(--a-con);
+  padding-bottom: 2px;
+}
+.cLink:hover {
+  color: var(--a-con) !important;
+}
+.socials {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+.socials a {
+  font-family: var(--disp);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 3px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.socials a:hover {
+  border-color: var(--a-con);
+  color: var(--a-con) !important;
+}
+
+/* ---------- footer ---------- */
+.footer {
+  border-top: 1px solid var(--rule);
+  margin-top: 16px;
+  padding: 24px 0 60px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+
+/* ---------- large screens: fixed corner chrome, KM-style ---------- */
+@media (min-width: 1220px) {
+  .header {
+    display: block;
+    height: 0;
+    padding: 0;
+    margin: 0;
+  }
+  .wordmark {
+    position: fixed;
+    top: 38px;
+    left: 42px;
+    z-index: 10;
+  }
+  .nav {
+    position: fixed;
+    top: 38px;
+    right: 42px;
+    z-index: 10;
+  }
+  /* fade so chrome stays legible over content scrolling beneath it */
+  .root::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 140px;
+    background: linear-gradient(var(--bg) 42%, rgba(20, 18, 16, 0));
+    pointer-events: none;
+    z-index: 8;
+  }
+  .wrap {
+    max-width: 840px;
+    padding-top: 152px;
+  }
+  /* clear the fixed chrome + top fade so jumped-to headers aren't shaded */
+  .section {
+    scroll-margin-top: 150px;
+  }
+}
+
+/* ---------- releases responsive ---------- */
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px 16px;
+  }
+}
+
+/* ---------- tracklist pop-out (additive: nothing shows until opened) ---------- */
+.locked {
+  overflow: hidden !important;
+}
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: flex-end; /* mobile default: bottom sheet */
+  justify-content: center;
+  background: rgba(10, 9, 8, 0.72);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  animation: sc-fade 0.22s ease;
+}
+.sheet {
+  width: 100%;
+  max-height: 82vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: #171512;
+  border-top: 1px solid rgba(236, 230, 218, 0.14);
+  border-radius: 16px 16px 0 0;
+  padding: 24px 26px 40px;
+  box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.6);
+  animation: sc-slide 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.sheetHead {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.sheetSide {
+  font-family: var(--disp);
+  font-weight: 700;
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--a-sets);
+}
+.sheetMeta {
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+.sheetClose {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-left: auto;
+  background: none;
+  border: 0;
+  padding: 0 2px;
+  color: var(--soft);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.sheetClose:hover {
+  color: var(--ink);
+}
+.sheetLabel {
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--soft);
+  border-top: 1px solid var(--rule-soft);
+  padding-top: 16px;
+  margin-bottom: 4px;
+}
+.tracklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.track {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(236, 230, 218, 0.06);
+  font-size: 16px;
+  transition: color 0.15s;
+}
+.track:last-child {
+  border-bottom: 0;
+}
+.tnum {
+  font-family: var(--disp);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--soft);
+  min-width: 22px;
+}
+.ttitle {
+  color: var(--ink);
+}
+.track:hover .ttitle {
+  color: var(--a-sets);
+}
+@keyframes sc-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes sc-slide {
+  from { transform: translateY(24px); opacity: 0.4; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes sc-pop {
+  from { transform: scale(0.96); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+@media (min-width: 640px) {
+  .backdrop {
+    align-items: center;
+    padding: 24px;
+  }
+  .sheet {
+    width: min(460px, 100%);
+    max-height: 80vh;
+    border: 1px solid rgba(236, 230, 218, 0.14);
+    border-radius: 14px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+    animation: sc-pop 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+}
