@@ -31,22 +31,23 @@ function playerSrc(track: string): string {
     '&show_reposts=false&show_teaser=false'
   );
 }
-// One live demo set for now. The tracklist below is still placeholder —
-// swap it for the real one when ready.
+// One live demo set — real SoundCloud performance set + its real tracklist.
 const SETS = [
   {
     side: 'Tracklist',
     meta: 'Live performance set',
     track: SET_URL,
     tracks: [
-      'ID — ID',
-      'Sam Clement — what you came for',
-      'ID — ID',
-      'Sam Clement — lost',
-      'Sam Clement — cha cha',
-      'ID — ID',
-      'Sam Clement — stargazing',
-      'ID — ID',
+      'Swedish House Mafia, The Weeknd, Moojo - Moth To A Flame (Moojo Remix)',
+      'PLS&TY, Antdot, Sofiya Nzau - Your Love (Antdot Extended Remix) (Original Mix)',
+      'Arash, HUGEL, Topic, Daecolm - I Adore You (Extended Mix)',
+      'Marten Lou - My Love for You (Yebba’s Heartbreak)',
+      'SVNTOS - Relax my eyes (remix)',
+      'Adam Port, Monolink - Point Of No Return (Extended Mix)',
+      'UNKLE, &ME, Keinemusik - Only You (&ME Remix)',
+      'Magnus, JEWELS, YUMA., SOMMA, LE YORA - EVERYTHING IN ITS RIGHT PLACE (Original Mix)',
+      '&ME, Rampa, Adam Port, Keinemusik, Sevdaliza - See You Again (Original Mix)',
+      'Boys Noize, &ME, Rampa, Adam Port, Keinemusik, Vinson - Crazy For It (feat. Vinson)',
     ],
   },
 ];

@@ -148,8 +148,8 @@ describe('music page — tracklist pop-out', () => {
     expect(dialog).toBeInTheDocument()
     expect(dialog.textContent).toContain('Tracklist')
     expect(dialog.textContent).toContain('Live performance set')
-    expect(dialog.textContent).toContain('what you came for')
-    expect(dialog.querySelectorAll('ol li')).toHaveLength(8) // A1 placeholder tracklist
+    expect(dialog.textContent).toContain('Moth To A Flame') // a real setlist track
+    expect(dialog.querySelectorAll('ol li')).toHaveLength(10) // full 10-track setlist
   })
 
   it('closes on the close button and on Escape', () => {
