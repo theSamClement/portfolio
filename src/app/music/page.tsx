@@ -272,11 +272,9 @@ export default function MusicPage() {
                 ×
               </button>
             </div>
-            <div className={styles.sheetLabel}>Tracklist</div>
             <ol className={styles.tracklist}>
               {active.tracks.map((t, idx) => (
                 <li key={idx} className={styles.track}>
-                  <span className={styles.tnum}>{String(idx + 1).padStart(2, '0')}</span>
                   <span className={styles.ttitle}>{t}</span>
                 </li>
               ))}

@@ -1,9 +1,9 @@
 /**
  * REGRESSION LOCK for the portfolio homepage (Sam's resume).
  *
- * Purpose: guarantee that adding the /music press-kit route never alters the
- * homepage's content, links, or its signature per-character "hop" effect.
- * If any of these break, the resume changed — fail loudly.
+ * Locks the CURRENT homepage: title, the four projects (in order), their exact
+ * copy + link destinations, the contact block, the per-character "hop" effect,
+ * and a full DOM snapshot. If a future change alters any of this, it fails loudly.
  */
 import { render } from '@testing-library/react'
 import HomePage from '@/app/page'
@@ -16,14 +16,17 @@ beforeEach(() => {
 // Normalize whitespace for text assertions (the effect re-emits spaces as text nodes).
 const flat = (el: Element | null) => (el?.textContent ?? '').replace(/\s+/g, ' ').trim()
 
+// [ id, description copy, link label, href ]
 const PROJECTS: Array<[string, string, string, string]> = [
   ['project1', 'making early-stage hiring more fair', '(kasii.tech)', 'https://kasii.tech'],
-  ['project2', 'getting your security deposit back', '(docor.io)', 'https://docor.io'],
-  ['project3', 'producing house music when i have a minute', '(soundcloud.com)', 'https://soundcloud.com/samcclement'],
-  ['project4', 'automating label outreach for small artists', '(trackpitch.io)', 'https://trackpitch.io'],
-  ['project5', 'functioning RISC-V cpu built from 1s and 0s', '(samclement@berkeley.edu)', 'mailto:samclement@berkeley.edu'],
-  ['project6', 'helping writers rough draft a little easier', '(getwrito.com)', 'https://getwrito.com'],
-  ['project7', 'managing your network systematically', '(netwyrk.me)', 'https://netwyrk.me'],
+  ['project2', 'producing house music when i have a minute', '(music site)', '/music'],
+  ['project3', 'automating label outreach for small artists', '(trackpitch.io)', 'https://trackpitch.io'],
+  [
+    'project4',
+    'market making for early stage sports entertainment companies',
+    '(samclement@berkeley.edu)',
+    'mailto:samclement@berkeley.edu',
+  ],
 ]
 
 describe('homepage — structure & content', () => {
@@ -34,20 +37,45 @@ describe('homepage — structure & content', () => {
     expect(flat(title)).toBe('portfolio')
   })
 
-  it('renders all 7 projects with exact copy and links', () => {
+  it('renders exactly four projects, in order', () => {
+    const { container } = render(<HomePage />)
+    const labels = Array.from(container.querySelectorAll('.project .title')).map(flat)
+    expect(labels).toEqual(['PROJECT 1', 'PROJECT 2', 'PROJECT 3', 'PROJECT 4'])
+  })
+
+  it('renders each project with exact copy and the correct link', () => {
     const { container } = render(<HomePage />)
     const whole = flat(container)
     for (const [id, desc, linkText, href] of PROJECTS) {
-      // project label present
-      expect(flat(container.querySelector(`#${id}`))).toBe(`PROJECT ${id.slice(-1)}`)
-      // description copy present verbatim
+      const title = container.querySelector(`#${id}`)
+      expect(flat(title)).toBe(`PROJECT ${id.slice(-1)}`)
       expect(whole).toContain(desc)
       expect(whole).toContain(linkText)
-      // link exists with the correct destination and visible label
-      const anchor = container.querySelector(`a[href="${href}"]`)
+      // scope the link lookup to this project's block (hrefs can repeat elsewhere)
+      const anchor = title!.closest('.project')!.querySelector('a')
       expect(anchor).toBeTruthy()
+      expect(anchor!.getAttribute('href')).toBe(href)
       expect(flat(anchor)).toBe(linkText)
     }
+  })
+
+  it('the music bullet points internally at /music (not SoundCloud)', () => {
+    const { container } = render(<HomePage />)
+    const musicLink = container.querySelector('#project2')!.closest('.project')!.querySelector('a')
+    expect(musicLink!.getAttribute('href')).toBe('/music')
+    // internal link: no new-tab target so it navigates in place
+    expect(musicLink!.getAttribute('target')).toBeNull()
+    // the old SoundCloud destination is gone from the whole page
+    expect(container.querySelector('a[href*="soundcloud.com"]')).toBeNull()
+  })
+
+  it('has removed the deleted projects (docor, RISC-V, getwrito, netwyrk)', () => {
+    const { container } = render(<HomePage />)
+    const whole = flat(container)
+    for (const gone of ['docor.io', 'getwrito.com', 'netwyrk.me', 'RISC-V', 'security deposit']) {
+      expect(whole).not.toContain(gone)
+    }
+    expect(container.querySelector('#project5')).toBeNull()
   })
 
   it('renders the contact block with exact copy and social links', () => {
@@ -68,8 +96,8 @@ describe('homepage — structure & content', () => {
       .map((a) => a.getAttribute('href'))
       .sort()
     const expected = [
-      ...PROJECTS.map((p) => p[3]),
-      'mailto:samclement@berkeley.edu',
+      ...PROJECTS.map((p) => p[3]), // includes project4's mailto
+      'mailto:samclement@berkeley.edu', // contact block mailto (duplicate is expected)
       'https://github.com/theSamClement',
       'https://www.linkedin.com/in/samcclement/',
     ].sort()
@@ -81,15 +109,12 @@ describe('homepage — the per-character "hop" effect', () => {
   it('wraps non-space characters in <span class="char"> after mount', () => {
     const { container } = render(<HomePage />)
     const chars = container.querySelectorAll('span.char')
-    // The page has hundreds of letters; a healthy wrap is well over 100.
     expect(chars.length).toBeGreaterThan(100)
-    // Each .char holds exactly one visible character.
     chars.forEach((c) => expect(c.textContent?.length).toBe(1))
   })
 
   it('preserves spacing so words stay legible (title + contact)', () => {
     const { container } = render(<HomePage />)
-    // If spaces were dropped, these would collapse to "BUYMEANAMERICANO?" etc.
     expect(flat(container.querySelector('#contact'))).toBe('BUY ME AN AMERICANO?')
     expect(flat(container.querySelector('#project3'))).toBe('PROJECT 3')
   })
@@ -97,9 +122,7 @@ describe('homepage — the per-character "hop" effect', () => {
   it('does not run the effect twice (idempotency guard honored)', () => {
     ;(window as unknown as { __charEffectApplied?: boolean }).__charEffectApplied = true
     const { container } = render(<HomePage />)
-    // Guard already set -> effect skipped -> no char spans created.
     expect(container.querySelectorAll('span.char').length).toBe(0)
-    // ...but the raw copy is still intact.
     expect(flat(container.querySelector('#title'))).toBe('portfolio')
   })
 })

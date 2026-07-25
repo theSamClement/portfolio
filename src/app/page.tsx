@@ -81,42 +81,21 @@ export default function HomePage() {
           <div className="project">
             <div className="title char-effect" id="project2">PROJECT 2</div>
             <div className="description">
-              <div className="project-description-text">getting your security deposit back <a href="https://docor.io" target="_blank" rel="noopener noreferrer" className="char-effect">(docor.io)</a></div>
+              <div className="project-description-text">producing house music when i have a minute <a href="/music" className="char-effect">(music site)</a></div>
             </div>
           </div>
 
           <div className="project">
             <div className="title char-effect" id="project3">PROJECT 3</div>
             <div className="description">
-              <div className="project-description-text">producing house music when i have a minute <a href="https://soundcloud.com/samcclement" target="_blank" rel="noopener noreferrer" className="char-effect">(soundcloud.com)</a></div>
+              <div className="project-description-text">automating label outreach for small artists <a href="https://trackpitch.io" target="_blank" rel="noopener noreferrer" className="char-effect">(trackpitch.io)</a></div>
             </div>
           </div>
 
           <div className="project">
             <div className="title char-effect" id="project4">PROJECT 4</div>
             <div className="description">
-              <div className="project-description-text">automating label outreach for small artists <a href="https://trackpitch.io" target="_blank" rel="noopener noreferrer" className="char-effect">(trackpitch.io)</a></div>
-            </div>
-          </div>
-
-          <div className="project">
-            <div className="title char-effect" id="project5">PROJECT 5</div>
-            <div className="description">
-              <div className="project-description-text">functioning RISC-V cpu built from 1s and 0s <a href="mailto:samclement@berkeley.edu" className="char-effect">(samclement@berkeley.edu)</a></div>
-            </div>
-          </div>
-
-          <div className="project">
-            <div className="title char-effect" id="project6">PROJECT 6</div>
-            <div className="description">
-              <div className="project-description-text">helping writers rough draft a little easier <a href="https://getwrito.com" target="_blank" rel="noopener noreferrer" className="char-effect">(getwrito.com)</a></div>
-            </div>
-          </div>
-
-          <div className="project">
-            <div className="title char-effect" id="project7">PROJECT 7</div>
-            <div className="description">
-              <div className="project-description-text">managing your network systematically <a href="https://netwyrk.me" target="_blank" rel="noopener noreferrer" className="char-effect">(netwyrk.me)</a></div>
+              <div className="project-description-text">market making for early stage sports entertainment companies <a href="mailto:samclement@berkeley.edu" className="char-effect">(samclement@berkeley.edu)</a></div>
             </div>
           </div>
 

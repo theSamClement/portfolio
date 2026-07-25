@@ -402,10 +402,10 @@
 }
 .sheetSide {
   font-family: var(--disp);
-  font-weight: 700;
-  font-size: 32px;
+  font-weight: 600;
+  font-size: 15px;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.08em;
   color: var(--a-sets);
 }
 .sheetMeta {
@@ -430,44 +430,33 @@
 .sheetClose:hover {
   color: var(--ink);
 }
-.sheetLabel {
-  font-size: 10.5px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--soft);
-  border-top: 1px solid var(--rule-soft);
-  padding-top: 16px;
-  margin-bottom: 4px;
-}
+/* liner-notes tracklist: gutter numbers via CSS counter (generated content is
+   not copied, so pasting gives clean track names — no double numbering). */
 .tracklist {
   list-style: none;
-  margin: 0;
+  margin: 4px 0 0;
   padding: 0;
+  counter-reset: tl;
 }
 .track {
-  display: flex;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: 28px 1fr;
   align-items: baseline;
-  padding: 9px 0;
-  border-bottom: 1px solid rgba(236, 230, 218, 0.06);
-  font-size: 16px;
-  transition: color 0.15s;
+  gap: 6px;
+  padding: 7px 0;
+  font-size: 16.5px;
+  line-height: 1.35;
 }
-.track:last-child {
-  border-bottom: 0;
-}
-.tnum {
+.track::before {
+  content: counter(tl);
+  counter-increment: tl;
   font-family: var(--disp);
-  font-size: 12px;
-  letter-spacing: 0.08em;
+  font-weight: 400;
+  font-size: 13px;
   color: var(--soft);
-  min-width: 22px;
 }
 .ttitle {
   color: var(--ink);
-}
-.track:hover .ttitle {
-  color: var(--a-sets);
 }
 @keyframes sc-fade {
   from { opacity: 0; }

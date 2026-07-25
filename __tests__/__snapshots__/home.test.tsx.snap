@@ -400,276 +400,6 @@ exports[`homepage — full DOM snapshot (byte-for-byte structure lock) matches t
           <span
             class="char"
           >
-            g
-          </span>
-          <span
-            class="char"
-          >
-            e
-          </span>
-          <span
-            class="char"
-          >
-            t
-          </span>
-          <span
-            class="char"
-          >
-            t
-          </span>
-          <span
-            class="char"
-          >
-            i
-          </span>
-          <span
-            class="char"
-          >
-            n
-          </span>
-          <span
-            class="char"
-          >
-            g
-          </span>
-           
-          <span
-            class="char"
-          >
-            y
-          </span>
-          <span
-            class="char"
-          >
-            o
-          </span>
-          <span
-            class="char"
-          >
-            u
-          </span>
-          <span
-            class="char"
-          >
-            r
-          </span>
-           
-          <span
-            class="char"
-          >
-            s
-          </span>
-          <span
-            class="char"
-          >
-            e
-          </span>
-          <span
-            class="char"
-          >
-            c
-          </span>
-          <span
-            class="char"
-          >
-            u
-          </span>
-          <span
-            class="char"
-          >
-            r
-          </span>
-          <span
-            class="char"
-          >
-            i
-          </span>
-          <span
-            class="char"
-          >
-            t
-          </span>
-          <span
-            class="char"
-          >
-            y
-          </span>
-           
-          <span
-            class="char"
-          >
-            d
-          </span>
-          <span
-            class="char"
-          >
-            e
-          </span>
-          <span
-            class="char"
-          >
-            p
-          </span>
-          <span
-            class="char"
-          >
-            o
-          </span>
-          <span
-            class="char"
-          >
-            s
-          </span>
-          <span
-            class="char"
-          >
-            i
-          </span>
-          <span
-            class="char"
-          >
-            t
-          </span>
-           
-          <span
-            class="char"
-          >
-            b
-          </span>
-          <span
-            class="char"
-          >
-            a
-          </span>
-          <span
-            class="char"
-          >
-            c
-          </span>
-          <span
-            class="char"
-          >
-            k
-          </span>
-           
-          <a
-            class="char-effect"
-            href="https://docor.io"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span
-              class="char"
-            >
-              (
-            </span>
-            <span
-              class="char"
-            >
-              d
-            </span>
-            <span
-              class="char"
-            >
-              o
-            </span>
-            <span
-              class="char"
-            >
-              c
-            </span>
-            <span
-              class="char"
-            >
-              o
-            </span>
-            <span
-              class="char"
-            >
-              r
-            </span>
-            <span
-              class="char"
-            >
-              .
-            </span>
-            <span
-              class="char"
-            >
-              i
-            </span>
-            <span
-              class="char"
-            >
-              o
-            </span>
-            <span
-              class="char"
-            >
-              )
-            </span>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div
-      class="project"
-    >
-      <div
-        class="title char-effect"
-        id="project3"
-      >
-        <span
-          class="char"
-        >
-          P
-        </span>
-        <span
-          class="char"
-        >
-          R
-        </span>
-        <span
-          class="char"
-        >
-          O
-        </span>
-        <span
-          class="char"
-        >
-          J
-        </span>
-        <span
-          class="char"
-        >
-          E
-        </span>
-        <span
-          class="char"
-        >
-          C
-        </span>
-        <span
-          class="char"
-        >
-          T
-        </span>
-         
-        <span
-          class="char"
-        >
-          3
-        </span>
-      </div>
-      <div
-        class="description"
-      >
-        <div
-          class="project-description-text"
-        >
-          <span
-            class="char"
-          >
             p
           </span>
           <span
@@ -852,9 +582,7 @@ exports[`homepage — full DOM snapshot (byte-for-byte structure lock) matches t
            
           <a
             class="char-effect"
-            href="https://soundcloud.com/samcclement"
-            rel="noopener noreferrer"
-            target="_blank"
+            href="/music"
           >
             <span
               class="char"
@@ -864,72 +592,48 @@ exports[`homepage — full DOM snapshot (byte-for-byte structure lock) matches t
             <span
               class="char"
             >
+              m
+            </span>
+            <span
+              class="char"
+            >
+              u
+            </span>
+            <span
+              class="char"
+            >
               s
             </span>
             <span
               class="char"
             >
-              o
-            </span>
-            <span
-              class="char"
-            >
-              u
-            </span>
-            <span
-              class="char"
-            >
-              n
-            </span>
-            <span
-              class="char"
-            >
-              d
+              i
             </span>
             <span
               class="char"
             >
               c
             </span>
+             
             <span
               class="char"
             >
-              l
+              s
             </span>
             <span
               class="char"
             >
-              o
+              i
             </span>
             <span
               class="char"
             >
-              u
+              t
             </span>
             <span
               class="char"
             >
-              d
-            </span>
-            <span
-              class="char"
-            >
-              .
-            </span>
-            <span
-              class="char"
-            >
-              c
-            </span>
-            <span
-              class="char"
-            >
-              o
-            </span>
-            <span
-              class="char"
-            >
-              m
+              e
             </span>
             <span
               class="char"
@@ -945,7 +649,7 @@ exports[`homepage — full DOM snapshot (byte-for-byte structure lock) matches t
     >
       <div
         class="title char-effect"
-        id="project4"
+        id="project3"
       >
         <span
           class="char"
@@ -986,7 +690,7 @@ exports[`homepage — full DOM snapshot (byte-for-byte structure lock) matches t
         <span
           class="char"
         >
-          4
+          3
         </span>
       </div>
       <div
@@ -1281,7 +985,7 @@ exports[`homepage — full DOM snapshot (byte-for-byte structure lock) matches t
     >
       <div
         class="title char-effect"
-        id="project5"
+        id="project4"
       >
         <span
           class="char"
@@ -1322,7 +1026,7 @@ exports[`homepage — full DOM snapshot (byte-for-byte structure lock) matches t
         <span
           class="char"
         >
-          5
+          4
         </span>
       </div>
       <div
@@ -1334,42 +1038,48 @@ exports[`homepage — full DOM snapshot (byte-for-byte structure lock) matches t
           <span
             class="char"
           >
-            f
+            m
           </span>
           <span
             class="char"
           >
-            u
+            a
           </span>
           <span
             class="char"
           >
-            n
+            r
           </span>
           <span
             class="char"
           >
-            c
+            k
+          </span>
+          <span
+            class="char"
+          >
+            e
           </span>
           <span
             class="char"
           >
             t
           </span>
+           
           <span
             class="char"
           >
-            i
+            m
           </span>
           <span
             class="char"
           >
-            o
+            a
           </span>
           <span
             class="char"
           >
-            n
+            k
           </span>
           <span
             class="char"
@@ -1390,38 +1100,75 @@ exports[`homepage — full DOM snapshot (byte-for-byte structure lock) matches t
           <span
             class="char"
           >
-            R
+            f
           </span>
           <span
             class="char"
           >
-            I
+            o
           </span>
           <span
             class="char"
           >
-            S
-          </span>
-          <span
-            class="char"
-          >
-            C
-          </span>
-          <span
-            class="char"
-          >
-            -
-          </span>
-          <span
-            class="char"
-          >
-            V
+            r
           </span>
            
           <span
             class="char"
           >
-            c
+            e
+          </span>
+          <span
+            class="char"
+          >
+            a
+          </span>
+          <span
+            class="char"
+          >
+            r
+          </span>
+          <span
+            class="char"
+          >
+            l
+          </span>
+          <span
+            class="char"
+          >
+            y
+          </span>
+           
+          <span
+            class="char"
+          >
+            s
+          </span>
+          <span
+            class="char"
+          >
+            t
+          </span>
+          <span
+            class="char"
+          >
+            a
+          </span>
+          <span
+            class="char"
+          >
+            g
+          </span>
+          <span
+            class="char"
+          >
+            e
+          </span>
+           
+          <span
+            class="char"
+          >
+            s
           </span>
           <span
             class="char"
@@ -1431,18 +1178,58 @@ exports[`homepage — full DOM snapshot (byte-for-byte structure lock) matches t
           <span
             class="char"
           >
-            u
+            o
+          </span>
+          <span
+            class="char"
+          >
+            r
+          </span>
+          <span
+            class="char"
+          >
+            t
+          </span>
+          <span
+            class="char"
+          >
+            s
           </span>
            
           <span
             class="char"
           >
-            b
+            e
           </span>
           <span
             class="char"
           >
-            u
+            n
+          </span>
+          <span
+            class="char"
+          >
+            t
+          </span>
+          <span
+            class="char"
+          >
+            e
+          </span>
+          <span
+            class="char"
+          >
+            r
+          </span>
+          <span
+            class="char"
+          >
+            t
+          </span>
+          <span
+            class="char"
+          >
+            a
           </span>
           <span
             class="char"
@@ -1452,7 +1239,22 @@ exports[`homepage — full DOM snapshot (byte-for-byte structure lock) matches t
           <span
             class="char"
           >
-            l
+            n
+          </span>
+          <span
+            class="char"
+          >
+            m
+          </span>
+          <span
+            class="char"
+          >
+            e
+          </span>
+          <span
+            class="char"
+          >
+            n
           </span>
           <span
             class="char"
@@ -1463,12 +1265,7 @@ exports[`homepage — full DOM snapshot (byte-for-byte structure lock) matches t
           <span
             class="char"
           >
-            f
-          </span>
-          <span
-            class="char"
-          >
-            r
+            c
           </span>
           <span
             class="char"
@@ -1480,18 +1277,11 @@ exports[`homepage — full DOM snapshot (byte-for-byte structure lock) matches t
           >
             m
           </span>
-           
           <span
             class="char"
           >
-            1
+            p
           </span>
-          <span
-            class="char"
-          >
-            s
-          </span>
-           
           <span
             class="char"
           >
@@ -1505,13 +1295,12 @@ exports[`homepage — full DOM snapshot (byte-for-byte structure lock) matches t
           <span
             class="char"
           >
-            d
+            i
           </span>
-           
           <span
             class="char"
           >
-            0
+            e
           </span>
           <span
             class="char"
@@ -1642,627 +1431,6 @@ exports[`homepage — full DOM snapshot (byte-for-byte structure lock) matches t
               class="char"
             >
               u
-            </span>
-            <span
-              class="char"
-            >
-              )
-            </span>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div
-      class="project"
-    >
-      <div
-        class="title char-effect"
-        id="project6"
-      >
-        <span
-          class="char"
-        >
-          P
-        </span>
-        <span
-          class="char"
-        >
-          R
-        </span>
-        <span
-          class="char"
-        >
-          O
-        </span>
-        <span
-          class="char"
-        >
-          J
-        </span>
-        <span
-          class="char"
-        >
-          E
-        </span>
-        <span
-          class="char"
-        >
-          C
-        </span>
-        <span
-          class="char"
-        >
-          T
-        </span>
-         
-        <span
-          class="char"
-        >
-          6
-        </span>
-      </div>
-      <div
-        class="description"
-      >
-        <div
-          class="project-description-text"
-        >
-          <span
-            class="char"
-          >
-            h
-          </span>
-          <span
-            class="char"
-          >
-            e
-          </span>
-          <span
-            class="char"
-          >
-            l
-          </span>
-          <span
-            class="char"
-          >
-            p
-          </span>
-          <span
-            class="char"
-          >
-            i
-          </span>
-          <span
-            class="char"
-          >
-            n
-          </span>
-          <span
-            class="char"
-          >
-            g
-          </span>
-           
-          <span
-            class="char"
-          >
-            w
-          </span>
-          <span
-            class="char"
-          >
-            r
-          </span>
-          <span
-            class="char"
-          >
-            i
-          </span>
-          <span
-            class="char"
-          >
-            t
-          </span>
-          <span
-            class="char"
-          >
-            e
-          </span>
-          <span
-            class="char"
-          >
-            r
-          </span>
-          <span
-            class="char"
-          >
-            s
-          </span>
-           
-          <span
-            class="char"
-          >
-            r
-          </span>
-          <span
-            class="char"
-          >
-            o
-          </span>
-          <span
-            class="char"
-          >
-            u
-          </span>
-          <span
-            class="char"
-          >
-            g
-          </span>
-          <span
-            class="char"
-          >
-            h
-          </span>
-           
-          <span
-            class="char"
-          >
-            d
-          </span>
-          <span
-            class="char"
-          >
-            r
-          </span>
-          <span
-            class="char"
-          >
-            a
-          </span>
-          <span
-            class="char"
-          >
-            f
-          </span>
-          <span
-            class="char"
-          >
-            t
-          </span>
-           
-          <span
-            class="char"
-          >
-            a
-          </span>
-           
-          <span
-            class="char"
-          >
-            l
-          </span>
-          <span
-            class="char"
-          >
-            i
-          </span>
-          <span
-            class="char"
-          >
-            t
-          </span>
-          <span
-            class="char"
-          >
-            t
-          </span>
-          <span
-            class="char"
-          >
-            l
-          </span>
-          <span
-            class="char"
-          >
-            e
-          </span>
-           
-          <span
-            class="char"
-          >
-            e
-          </span>
-          <span
-            class="char"
-          >
-            a
-          </span>
-          <span
-            class="char"
-          >
-            s
-          </span>
-          <span
-            class="char"
-          >
-            i
-          </span>
-          <span
-            class="char"
-          >
-            e
-          </span>
-          <span
-            class="char"
-          >
-            r
-          </span>
-           
-          <a
-            class="char-effect"
-            href="https://getwrito.com"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span
-              class="char"
-            >
-              (
-            </span>
-            <span
-              class="char"
-            >
-              g
-            </span>
-            <span
-              class="char"
-            >
-              e
-            </span>
-            <span
-              class="char"
-            >
-              t
-            </span>
-            <span
-              class="char"
-            >
-              w
-            </span>
-            <span
-              class="char"
-            >
-              r
-            </span>
-            <span
-              class="char"
-            >
-              i
-            </span>
-            <span
-              class="char"
-            >
-              t
-            </span>
-            <span
-              class="char"
-            >
-              o
-            </span>
-            <span
-              class="char"
-            >
-              .
-            </span>
-            <span
-              class="char"
-            >
-              c
-            </span>
-            <span
-              class="char"
-            >
-              o
-            </span>
-            <span
-              class="char"
-            >
-              m
-            </span>
-            <span
-              class="char"
-            >
-              )
-            </span>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div
-      class="project"
-    >
-      <div
-        class="title char-effect"
-        id="project7"
-      >
-        <span
-          class="char"
-        >
-          P
-        </span>
-        <span
-          class="char"
-        >
-          R
-        </span>
-        <span
-          class="char"
-        >
-          O
-        </span>
-        <span
-          class="char"
-        >
-          J
-        </span>
-        <span
-          class="char"
-        >
-          E
-        </span>
-        <span
-          class="char"
-        >
-          C
-        </span>
-        <span
-          class="char"
-        >
-          T
-        </span>
-         
-        <span
-          class="char"
-        >
-          7
-        </span>
-      </div>
-      <div
-        class="description"
-      >
-        <div
-          class="project-description-text"
-        >
-          <span
-            class="char"
-          >
-            m
-          </span>
-          <span
-            class="char"
-          >
-            a
-          </span>
-          <span
-            class="char"
-          >
-            n
-          </span>
-          <span
-            class="char"
-          >
-            a
-          </span>
-          <span
-            class="char"
-          >
-            g
-          </span>
-          <span
-            class="char"
-          >
-            i
-          </span>
-          <span
-            class="char"
-          >
-            n
-          </span>
-          <span
-            class="char"
-          >
-            g
-          </span>
-           
-          <span
-            class="char"
-          >
-            y
-          </span>
-          <span
-            class="char"
-          >
-            o
-          </span>
-          <span
-            class="char"
-          >
-            u
-          </span>
-          <span
-            class="char"
-          >
-            r
-          </span>
-           
-          <span
-            class="char"
-          >
-            n
-          </span>
-          <span
-            class="char"
-          >
-            e
-          </span>
-          <span
-            class="char"
-          >
-            t
-          </span>
-          <span
-            class="char"
-          >
-            w
-          </span>
-          <span
-            class="char"
-          >
-            o
-          </span>
-          <span
-            class="char"
-          >
-            r
-          </span>
-          <span
-            class="char"
-          >
-            k
-          </span>
-           
-          <span
-            class="char"
-          >
-            s
-          </span>
-          <span
-            class="char"
-          >
-            y
-          </span>
-          <span
-            class="char"
-          >
-            s
-          </span>
-          <span
-            class="char"
-          >
-            t
-          </span>
-          <span
-            class="char"
-          >
-            e
-          </span>
-          <span
-            class="char"
-          >
-            m
-          </span>
-          <span
-            class="char"
-          >
-            a
-          </span>
-          <span
-            class="char"
-          >
-            t
-          </span>
-          <span
-            class="char"
-          >
-            i
-          </span>
-          <span
-            class="char"
-          >
-            c
-          </span>
-          <span
-            class="char"
-          >
-            a
-          </span>
-          <span
-            class="char"
-          >
-            l
-          </span>
-          <span
-            class="char"
-          >
-            l
-          </span>
-          <span
-            class="char"
-          >
-            y
-          </span>
-           
-          <a
-            class="char-effect"
-            href="https://netwyrk.me"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span
-              class="char"
-            >
-              (
-            </span>
-            <span
-              class="char"
-            >
-              n
-            </span>
-            <span
-              class="char"
-            >
-              e
-            </span>
-            <span
-              class="char"
-            >
-              t
-            </span>
-            <span
-              class="char"
-            >
-              w
-            </span>
-            <span
-              class="char"
-            >
-              y
-            </span>
-            <span
-              class="char"
-            >
-              r
-            </span>
-            <span
-              class="char"
-            >
-              k
-            </span>
-            <span
-              class="char"
-            >
-              .
-            </span>
-            <span
-              class="char"
-            >
-              m
-            </span>
-            <span
-              class="char"
-            >
-              e
             </span>
             <span
               class="char"
