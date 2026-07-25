@@ -35,8 +35,8 @@ function playerSrc(track: string): string {
 // swap it for the real one when ready.
 const SETS = [
   {
-    side: 'A1',
-    meta: 'Performance set',
+    side: 'Tracklist',
+    meta: 'Live performance set',
     track: SET_URL,
     tracks: [
       'ID — ID',
@@ -226,7 +226,7 @@ export default function MusicPage() {
             className={styles.sheet}
             role="dialog"
             aria-modal="true"
-            aria-label={`${active.side} tracklist`}
+            aria-label={`${active.meta} tracklist`}
             onClick={(e) => e.stopPropagation()}
           >
             <div className={styles.sheetHead}>

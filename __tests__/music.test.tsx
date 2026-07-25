@@ -136,8 +136,8 @@ describe('music page — tracklist pop-out', () => {
   it('puts a trigger on each set title and shows no dialog by default', () => {
     const { container } = render(<MusicPage />)
     expect(triggers(container)).toHaveLength(1)
-    // the trigger IS the "A1" label — no extra visible affordance text added
-    expect((triggers(container)[0].textContent || '').replace(/\s+/g, '')).toBe('A1')
+    // the trigger label is literally "Tracklist" (clicking it opens the tracklist)
+    expect((triggers(container)[0].textContent || '').replace(/\s+/g, '')).toBe('Tracklist')
     expect(screen.queryByRole('dialog')).toBeNull()
   })
 
@@ -146,8 +146,8 @@ describe('music page — tracklist pop-out', () => {
     fireEvent.click(triggers(container)[0])
     const dialog = screen.getByRole('dialog')
     expect(dialog).toBeInTheDocument()
-    expect(dialog.textContent).toContain('A1')
-    expect(dialog.textContent).toContain('Performance set')
+    expect(dialog.textContent).toContain('Tracklist')
+    expect(dialog.textContent).toContain('Live performance set')
     expect(dialog.textContent).toContain('what you came for')
     expect(dialog.querySelectorAll('ol li')).toHaveLength(8) // A1 placeholder tracklist
   })
