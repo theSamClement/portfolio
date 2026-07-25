@@ -81,7 +81,7 @@ export default function HomePage() {
           <div className="project">
             <div className="title char-effect" id="project2">PROJECT 2</div>
             <div className="description">
-              <div className="project-description-text">producing house music when i have a minute <a href="/music" className="char-effect">(music site)</a></div>
+              <div className="project-description-text">producing house music when i have a minute <a href="/music" className="char-effect" style={{ textDecoration: 'none' }}>(music site)</a></div>
             </div>
           </div>
 

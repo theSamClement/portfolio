@@ -583,6 +583,7 @@ exports[`homepage — full DOM snapshot (byte-for-byte structure lock) matches t
           <a
             class="char-effect"
             href="/music"
+            style="text-decoration: none;"
           >
             <span
               class="char"

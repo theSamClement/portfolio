@@ -60,14 +60,15 @@ describe('music page — structure & content', () => {
 })
 
 describe('music page — demo sets (SoundCloud)', () => {
-  it('embeds exactly three visual SoundCloud players under #sets', () => {
+  it('embeds one visual SoundCloud player (the real performance set) under #sets', () => {
     const { container } = render(<MusicPage />)
     const frames = container.querySelectorAll('#sets iframe')
-    expect(frames.length).toBe(3)
+    expect(frames.length).toBe(1)
     frames.forEach((f) => {
       const src = f.getAttribute('src') || ''
       expect(src).toContain('w.soundcloud.com/player')
       expect(src).toContain('visual=true')
+      expect(src).toContain('performance-set-1') // the real set, not a placeholder
     })
   })
 })
@@ -134,7 +135,7 @@ describe('music page — tracklist pop-out', () => {
 
   it('puts a trigger on each set title and shows no dialog by default', () => {
     const { container } = render(<MusicPage />)
-    expect(triggers(container)).toHaveLength(3)
+    expect(triggers(container)).toHaveLength(1)
     // the trigger IS the "A1" label — no extra visible affordance text added
     expect((triggers(container)[0].textContent || '').replace(/\s+/g, '')).toBe('A1')
     expect(screen.queryByRole('dialog')).toBeNull()
@@ -146,7 +147,7 @@ describe('music page — tracklist pop-out', () => {
     const dialog = screen.getByRole('dialog')
     expect(dialog).toBeInTheDocument()
     expect(dialog.textContent).toContain('A1')
-    expect(dialog.textContent).toContain('Live · 60:00')
+    expect(dialog.textContent).toContain('Performance set')
     expect(dialog.textContent).toContain('what you came for')
     expect(dialog.querySelectorAll('ol li')).toHaveLength(8) // A1 placeholder tracklist
   })

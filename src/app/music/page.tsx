@@ -20,8 +20,8 @@ const spaceGrotesk = Space_Grotesk({
   display: 'swap',
 });
 
-// --- Demo sets: placeholder SoundCloud track until real mix URLs land ---
-const PLACEHOLDER = 'https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F210462888';
+// --- Demo set: real SoundCloud performance set ---
+const SET_URL = 'https%3A%2F%2Fsoundcloud.com%2Fsamcclement%2Fperformance-set-1';
 function playerSrc(track: string): string {
   return (
     'https://w.soundcloud.com/player/?url=' +
@@ -31,49 +31,19 @@ function playerSrc(track: string): string {
     '&show_reposts=false&show_teaser=false'
   );
 }
-// Placeholder tracklists (built from Sam's real titles + "ID" for unreleased).
-// Swap these for the actual set tracklists.
+// One live demo set for now. The tracklist below is still placeholder —
+// swap it for the real one when ready.
 const SETS = [
   {
     side: 'A1',
-    meta: 'Live · 60:00',
-    track: PLACEHOLDER,
+    meta: 'Performance set',
+    track: SET_URL,
     tracks: [
       'ID — ID',
       'Sam Clement — what you came for',
       'ID — ID',
       'Sam Clement — lost',
       'Sam Clement — cha cha',
-      'ID — ID',
-      'Sam Clement — stargazing',
-      'ID — ID',
-    ],
-  },
-  {
-    side: 'A2',
-    meta: 'Live · 74:00',
-    track: PLACEHOLDER,
-    tracks: [
-      'Sam Clement — ooouuu',
-      'ID — ID',
-      'Sam Clement — counting stars',
-      'ID — ID',
-      'ID — ID',
-      'Sam Clement — lanele',
-      'Sam Clement — can i call you tonight?',
-      'ID — ID',
-      'ID — ID',
-    ],
-  },
-  {
-    side: 'B1',
-    meta: 'Mix · 58:00',
-    track: PLACEHOLDER,
-    tracks: [
-      'ID — ID',
-      'Sam Clement — stargirl interlude',
-      'ID — ID',
-      'Sam Clement — what you came for',
       'ID — ID',
       'Sam Clement — stargazing',
       'ID — ID',
