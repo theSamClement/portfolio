@@ -172,7 +172,8 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  box-shadow: inset 0 0 60px 22px var(--bg);
+  /* light vignette: soft edge blend, no solid spread that eats the player's text */
+  box-shadow: inset 0 0 28px 2px var(--bg);
 }
 .player iframe {
   display: block;
@@ -180,14 +181,14 @@
   width: 100%;
   height: 325px;
   margin-top: -5px;
-  filter: grayscale(1) contrast(1.08) brightness(0.8);
+  filter: grayscale(1) contrast(1.05) brightness(0.9);
   -webkit-mask:
-    linear-gradient(to right, transparent, #000 20px, #000 calc(100% - 20px), transparent),
-    linear-gradient(to bottom, transparent, #000 20px, #000 calc(100% - 20px), transparent);
+    linear-gradient(to right, transparent, #000 10px, #000 calc(100% - 10px), transparent),
+    linear-gradient(to bottom, transparent, #000 10px, #000 calc(100% - 10px), transparent);
   -webkit-mask-composite: source-in;
   mask:
-    linear-gradient(to right, transparent, #000 20px, #000 calc(100% - 20px), transparent),
-    linear-gradient(to bottom, transparent, #000 20px, #000 calc(100% - 20px), transparent);
+    linear-gradient(to right, transparent, #000 10px, #000 calc(100% - 10px), transparent),
+    linear-gradient(to bottom, transparent, #000 10px, #000 calc(100% - 10px), transparent);
   mask-composite: intersect;
 }
 
