@@ -86,13 +86,28 @@ describe('music page — releases catalog (Spotify)', () => {
     const whole = flat(container.querySelector('#releases'))
     for (const t of RELEASE_TITLES) expect(whole).toContain(t)
 
-    // every release has a Spotify CDN cover image
+    // every release has a cover image + descriptive alt; the source is either the
+    // Spotify CDN (5) or a locally hosted, text-free original under /covers (4).
     const imgs = Array.from(container.querySelectorAll('#releases img'))
     expect(imgs.length).toBe(9)
     imgs.forEach((img) => {
-      expect(img.getAttribute('src') || '').toMatch(/^https:\/\/i\.scdn\.co\/image\/ab67616d0000b273/)
+      expect(img.getAttribute('src') || '').toMatch(/^(https:\/\/i\.scdn\.co\/image\/ab67616d0000b273|\/covers\/)/)
       expect(img.getAttribute('alt') || '').toContain('cover')
     })
+
+    // the four covers that previously had baked-in title text are now the clean
+    // local versions (lost / what you came for / ooouuu / lanele).
+    const srcs = imgs.map((img) => img.getAttribute('src') || '')
+    expect(srcs.filter((s) => s.startsWith('/covers/'))).toHaveLength(4)
+    expect(srcs.filter((s) => s.includes('i.scdn.co'))).toHaveLength(5)
+    expect(srcs).toEqual(
+      expect.arrayContaining([
+        '/covers/lost.jpg',
+        '/covers/whatyoucamefor.jpg',
+        '/covers/ooouuu.jpg',
+        '/covers/lanele.jpg',
+      ]),
+    )
   })
 })
 

@@ -71,19 +71,23 @@ const SETS = [
   },
 ];
 
-// --- Releases: pulled from Sam's Spotify artist page (640px cover art) ---
+// --- Releases: covers are Sam's own photos (640px, 1:1). Most come from the
+// Spotify CDN via `art`; the four whose Spotify art had a title-text overlay use
+// the clean, text-free originals hosted locally under /public/covers (`cover`),
+// so they no longer depend on Spotify's CDN. ---
 const IMG = 'https://i.scdn.co/image/ab67616d0000b273';
 const ALBUM = 'https://open.spotify.com/album/';
-const RELEASES = [
+type Release = { title: string; year: string; id: string; art?: string; cover?: string };
+const RELEASES: Release[] = [
   { title: 'stargazing', year: '2026', id: '2cUo41zNS1CJuu5WEQzfCL', art: '7bafa2465e190b0d2ee1cecd' },
   { title: 'counting stars', year: '2026', id: '5gEiKKFMm6hOa90ukzwU4Z', art: 'bb1a61a7e66026d69dfa1394' },
-  { title: 'lost', year: '2025', id: '5BzQXhHTXWnSs7Q7d8OjCZ', art: '291ff52a3c88bc6a59c3c750' },
+  { title: 'lost', year: '2025', id: '5BzQXhHTXWnSs7Q7d8OjCZ', cover: '/covers/lost.jpg' },
   { title: 'stargirl interlude', year: '2026', id: '3PVaP0zeCBHUBFgS1QSluH', art: '59b98ad695401fe0d2403ed5' },
   { title: 'can i call you tonight?', year: '2026', id: '0K3BlVnmFfNDrdS9vR161k', art: '123f0f10d5b78c292cc72597' },
-  { title: 'what you came for', year: '2025', id: '23NjHbRD2LFMeM3I9qtFOJ', art: 'd12df19c028cdc96429db421' },
+  { title: 'what you came for', year: '2025', id: '23NjHbRD2LFMeM3I9qtFOJ', cover: '/covers/whatyoucamefor.jpg' },
   { title: 'cha cha', year: '2026', id: '6M3gdIcueb8G1tLiXFEybp', art: 'c38bceea176c9bcdad92dcda' },
-  { title: 'ooouuu', year: '2025', id: '6g3SyDwtrL1Blx7qJgnFwF', art: '8fbb1eedc7d0b9a0594d8975' },
-  { title: 'lanele', year: '2025', id: '4i6Es7XWZTYKgAm6HbRacT', art: 'dc8f97d72d64959461a8ad38' },
+  { title: 'ooouuu', year: '2025', id: '6g3SyDwtrL1Blx7qJgnFwF', cover: '/covers/ooouuu.jpg' },
+  { title: 'lanele', year: '2025', id: '4i6Es7XWZTYKgAm6HbRacT', cover: '/covers/lanele.jpg' },
 ];
 
 /**
@@ -209,7 +213,7 @@ export default function MusicPage() {
               >
                 <div className={styles.coverWrap}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img className={styles.cover} src={`${IMG}${r.art}`} alt={`${r.title} cover`} loading="lazy" />
+                  <img className={styles.cover} src={r.cover ?? `${IMG}${r.art}`} alt={`${r.title} cover`} loading="lazy" />
                 </div>
                 <div className={styles.rtitle}>{r.title}</div>
                 <div className={styles.rmeta}>{r.year} · Spotify ↗</div>
