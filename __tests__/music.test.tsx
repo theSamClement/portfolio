@@ -60,16 +60,20 @@ describe('music page — structure & content', () => {
 })
 
 describe('music page — demo sets (SoundCloud)', () => {
-  it('embeds one visual SoundCloud player (the real performance set) under #sets', () => {
+  it('embeds two visual SoundCloud players (the real performance sets) under #sets', () => {
     const { container } = render(<MusicPage />)
     const frames = container.querySelectorAll('#sets iframe')
-    expect(frames.length).toBe(1)
+    expect(frames.length).toBe(2)
     frames.forEach((f) => {
       const src = f.getAttribute('src') || ''
       expect(src).toContain('w.soundcloud.com/player')
       expect(src).toContain('visual=true')
-      expect(src).toContain('performance-set-1') // the real set, not a placeholder
     })
+    const allSrc = Array.from(frames)
+      .map((f) => f.getAttribute('src'))
+      .join(' ')
+    expect(allSrc).toContain('performance-set-1')
+    expect(allSrc).toContain('performance-set-2-1')
   })
 })
 
@@ -136,8 +140,8 @@ describe('music page — tracklist pop-out', () => {
   it('puts a trigger on each set title and shows no dialog by default', () => {
     const { container } = render(<MusicPage />)
     expect(triggers(container)).toHaveLength(1)
-    // the trigger label is literally "Tracklist" (clicking it opens the tracklist)
-    expect((triggers(container)[0].textContent || '').replace(/\s+/g, '')).toBe('Tracklist')
+    // only set 1 has a tracklist; its label ("performance set 1") is the trigger
+    expect((triggers(container)[0].textContent || '').replace(/\s+/g, '')).toBe('performanceset1')
     expect(screen.queryByRole('dialog')).toBeNull()
   })
 
@@ -146,8 +150,8 @@ describe('music page — tracklist pop-out', () => {
     fireEvent.click(triggers(container)[0])
     const dialog = screen.getByRole('dialog')
     expect(dialog).toBeInTheDocument()
-    expect(dialog.textContent).toContain('Tracklist')
-    expect(dialog.textContent).toContain('Live performance set')
+    expect(dialog.textContent).toContain('performance set 1')
+    expect(dialog.textContent).toContain('Live set')
     expect(dialog.textContent).toContain('Moth To A Flame') // a real setlist track
     expect(dialog.querySelectorAll('ol li')).toHaveLength(10) // full 10-track setlist
   })

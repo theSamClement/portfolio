@@ -150,6 +150,9 @@
   margin: 0;
   color: inherit;
   line-height: inherit;
+}
+/* pointer only on the clickable variant (a set with a tracklist) */
+button.side {
   cursor: pointer;
 }
 .meta {
@@ -212,12 +215,13 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: saturate(0.95) brightness(0.94);
+  /* grayscale to match the black & white SoundCloud embed */
+  filter: grayscale(1) contrast(1.05) brightness(0.92);
   transition: transform 0.45s ease, filter 0.45s ease;
 }
 .release:hover .cover {
   transform: scale(1.045);
-  filter: saturate(1.12) brightness(1.05);
+  filter: grayscale(1) contrast(1.05) brightness(1.02);
 }
 .rtitle {
   margin-top: 13px;

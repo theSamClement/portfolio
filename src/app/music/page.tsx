@@ -20,8 +20,9 @@ const spaceGrotesk = Space_Grotesk({
   display: 'swap',
 });
 
-// --- Demo set: real SoundCloud performance set ---
+// --- Demo sets: real SoundCloud performance sets ---
 const SET_URL = 'https%3A%2F%2Fsoundcloud.com%2Fsamcclement%2Fperformance-set-1';
+const SET2_URL = 'https%3A%2F%2Fsoundcloud.com%2Fsamcclement%2Fperformance-set-2-1';
 function playerSrc(track: string): string {
   return (
     'https://w.soundcloud.com/player/?url=' +
@@ -31,11 +32,11 @@ function playerSrc(track: string): string {
     '&show_reposts=false&show_teaser=false'
   );
 }
-// One live demo set — real SoundCloud performance set + its real tracklist.
+// Live demo sets (real SoundCloud performance sets).
 const SETS = [
   {
-    side: 'Tracklist',
-    meta: 'Live performance set',
+    side: 'performance set 1',
+    meta: 'Live set',
     track: SET_URL,
     tracks: [
       'Swedish House Mafia, The Weeknd, Moojo - Moth To A Flame (Moojo Remix)',
@@ -49,6 +50,12 @@ const SETS = [
       '&ME, Rampa, Adam Port, Keinemusik, Sevdaliza - See You Again (Original Mix)',
       'Boys Noize, &ME, Rampa, Adam Port, Keinemusik, Vinson - Crazy For It (feat. Vinson)',
     ],
+  },
+  {
+    side: 'performance set 2',
+    meta: 'Live set',
+    track: SET2_URL,
+    tracks: [], // tracklist to come
   },
 ];
 
@@ -149,14 +156,18 @@ export default function MusicPage() {
           {SETS.map((s, i) => (
             <article className={styles.mix} key={s.side}>
               <div className={styles.cap}>
-                <button
-                  type="button"
-                  className={styles.side}
-                  onClick={() => setOpenSet(i)}
-                  aria-haspopup="dialog"
-                >
-                  {s.side}
-                </button>
+                {s.tracks.length > 0 ? (
+                  <button
+                    type="button"
+                    className={styles.side}
+                    onClick={() => setOpenSet(i)}
+                    aria-haspopup="dialog"
+                  >
+                    {s.side}
+                  </button>
+                ) : (
+                  <span className={styles.side}>{s.side}</span>
+                )}
                 <span className={styles.meta}>{s.meta}</span>
               </div>
               <div className={styles.player}>
