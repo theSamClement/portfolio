@@ -55,7 +55,19 @@ const SETS = [
     side: 'performance set 2',
     meta: 'Live set',
     track: SET2_URL,
-    tracks: [], // tracklist to come
+    tracks: [
+      'Swedish House Mafia, The Weeknd, Moojo - Moth To A Flame (Moojo Remix)',
+      'Adam Port, Stryv, Malachiii - Positions (Extended)',
+      'PLS&TY, Antdot, Sofiya Nzau - Your Love (Antdot Extended Remix) (Original Mix)',
+      'Lana Del Rey - Summertime Sadness (LANNIK EDIT)',
+      'Marea (UCHA Remix x Claes Sommer Interpretation)',
+      'Modjo - Lady (Hear Me Tonight) - Remix',
+      'Kanye West - I Wonder (Cees, CS, Gordo Remix)',
+      '&ME, Black Coffee, Keinemusik - The Rapture Pt.III (Original Mix)',
+      'Jorja Smith - Feelings (David Mackay Remix)',
+      'Drake, Rihanna - Take Care (Moojo Remix)',
+      'HUGEL - Patadas de Ahogado - LATÍN MAFIA, HUMBE (Extended Rework)',
+    ],
   },
 ];
 

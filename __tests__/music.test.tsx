@@ -139,9 +139,10 @@ describe('music page — tracklist pop-out', () => {
 
   it('puts a trigger on each set title and shows no dialog by default', () => {
     const { container } = render(<MusicPage />)
-    expect(triggers(container)).toHaveLength(1)
-    // only set 1 has a tracklist; its label ("performance set 1") is the trigger
+    expect(triggers(container)).toHaveLength(2)
+    // both sets have tracklists now; their labels are the triggers
     expect((triggers(container)[0].textContent || '').replace(/\s+/g, '')).toBe('performanceset1')
+    expect((triggers(container)[1].textContent || '').replace(/\s+/g, '')).toBe('performanceset2')
     expect(screen.queryByRole('dialog')).toBeNull()
   })
 
@@ -154,6 +155,15 @@ describe('music page — tracklist pop-out', () => {
     expect(dialog.textContent).toContain('Live set')
     expect(dialog.textContent).toContain('Moth To A Flame') // a real setlist track
     expect(dialog.querySelectorAll('ol li')).toHaveLength(10) // full 10-track setlist
+  })
+
+  it('opens set 2 tracklist (11 tracks) when its label is clicked', () => {
+    const { container } = render(<MusicPage />)
+    fireEvent.click(triggers(container)[1])
+    const dialog = screen.getByRole('dialog')
+    expect(dialog.textContent).toContain('performance set 2')
+    expect(dialog.textContent).toContain('Summertime Sadness')
+    expect(dialog.querySelectorAll('ol li')).toHaveLength(11)
   })
 
   it('closes on the close button and on Escape', () => {
