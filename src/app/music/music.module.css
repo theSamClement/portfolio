@@ -392,30 +392,33 @@ button.side {
   max-height: 82vh;
   overflow-y: auto;
   overscroll-behavior: contain;
-  background: #171512;
-  border-top: 1px solid rgba(236, 230, 218, 0.14);
-  border-radius: 16px 16px 0 0;
-  padding: 24px 26px 40px;
-  box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.6);
+  background: var(--bg);
+  /* framed like the SoundCloud embed: same hairline border, sharp corners */
+  border: 1px solid rgba(236, 230, 218, 0.2);
+  border-radius: 0;
+  box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.55);
   animation: sc-slide 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .sheetHead {
   display: flex;
   align-items: baseline;
-  gap: 14px;
-  margin-bottom: 18px;
+  gap: 12px;
+  padding: 16px 22px;
+  border-bottom: 1px solid var(--rule);
 }
 .sheetSide {
   font-family: var(--disp);
-  font-weight: 600;
-  font-size: 15px;
+  font-weight: 700;
+  font-size: 16px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--a-sets);
+  letter-spacing: 0.06em;
+  color: var(--ink);
 }
 .sheetMeta {
-  font-size: 11.5px;
-  letter-spacing: 0.16em;
+  font-family: var(--disp);
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--soft);
 }
@@ -427,7 +430,7 @@ button.side {
   border: 0;
   padding: 0 2px;
   color: var(--soft);
-  font-size: 26px;
+  font-size: 24px;
   line-height: 1;
   cursor: pointer;
   transition: color 0.2s;
@@ -435,30 +438,33 @@ button.side {
 .sheetClose:hover {
   color: var(--ink);
 }
-/* liner-notes tracklist: gutter numbers via CSS counter (generated content is
-   not copied, so pasting gives clean track names — no double numbering). */
+/* liner-notes tracklist: leading-zero index via CSS counter (generated content
+   isn't copied, so pasting gives clean track names — no double numbering).
+   No per-row dividers (those read as UI-kit). */
 .tracklist {
   list-style: none;
-  margin: 4px 0 0;
-  padding: 0;
+  margin: 0;
+  padding: 12px 22px 22px;
   counter-reset: tl;
 }
 .track {
   display: grid;
-  grid-template-columns: 28px 1fr;
+  grid-template-columns: 34px 1fr;
   align-items: baseline;
-  gap: 6px;
+  gap: 8px;
   padding: 7px 0;
-  font-size: 16.5px;
+  font-size: 16px;
   line-height: 1.35;
 }
 .track::before {
-  content: counter(tl);
+  content: counter(tl, decimal-leading-zero);
   counter-increment: tl;
   font-family: var(--disp);
-  font-weight: 400;
-  font-size: 13px;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.05em;
   color: var(--soft);
+  padding-top: 2px;
 }
 .ttitle {
   color: var(--ink);
@@ -481,10 +487,8 @@ button.side {
     padding: 24px;
   }
   .sheet {
-    width: min(460px, 100%);
+    width: min(480px, 100%);
     max-height: 80vh;
-    border: 1px solid rgba(236, 230, 218, 0.14);
-    border-radius: 14px;
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
     animation: sc-pop 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
