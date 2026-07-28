@@ -60,10 +60,10 @@ describe('music page — structure & content', () => {
 })
 
 describe('music page — demo sets (SoundCloud)', () => {
-  it('embeds two visual SoundCloud players (the real performance sets) under #sets', () => {
+  it('embeds three visual SoundCloud players (the real performance sets) under #sets', () => {
     const { container } = render(<MusicPage />)
     const frames = container.querySelectorAll('#sets iframe')
-    expect(frames.length).toBe(2)
+    expect(frames.length).toBe(3)
     frames.forEach((f) => {
       const src = f.getAttribute('src') || ''
       expect(src).toContain('w.soundcloud.com/player')
@@ -74,6 +74,7 @@ describe('music page — demo sets (SoundCloud)', () => {
       .join(' ')
     expect(allSrc).toContain('performance-set-1')
     expect(allSrc).toContain('performance-set-2-1')
+    expect(allSrc).toContain('performance-set-3')
   })
 })
 
@@ -154,10 +155,11 @@ describe('music page — tracklist pop-out', () => {
 
   it('puts a trigger on each set title and shows no dialog by default', () => {
     const { container } = render(<MusicPage />)
-    expect(triggers(container)).toHaveLength(2)
-    // both sets have tracklists now; their labels are the triggers
+    expect(triggers(container)).toHaveLength(3)
+    // all sets have tracklists now; their labels are the triggers
     expect((triggers(container)[0].textContent || '').replace(/\s+/g, '')).toBe('performanceset1')
     expect((triggers(container)[1].textContent || '').replace(/\s+/g, '')).toBe('performanceset2')
+    expect((triggers(container)[2].textContent || '').replace(/\s+/g, '')).toBe('performanceset3')
     expect(screen.queryByRole('dialog')).toBeNull()
   })
 
@@ -179,6 +181,15 @@ describe('music page — tracklist pop-out', () => {
     expect(dialog.textContent).toContain('performance set 2')
     expect(dialog.textContent).toContain('Summertime Sadness')
     expect(dialog.querySelectorAll('ol li')).toHaveLength(11)
+  })
+
+  it('opens set 3 tracklist (10 tracks) when its label is clicked', () => {
+    const { container } = render(<MusicPage />)
+    fireEvent.click(triggers(container)[2])
+    const dialog = screen.getByRole('dialog')
+    expect(dialog.textContent).toContain('performance set 3')
+    expect(dialog.textContent).toContain('Love Lockdown')
+    expect(dialog.querySelectorAll('ol li')).toHaveLength(10)
   })
 
   it('closes on the close button and on Escape', () => {

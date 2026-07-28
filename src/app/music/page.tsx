@@ -23,6 +23,7 @@ const spaceGrotesk = Space_Grotesk({
 // --- Demo sets: real SoundCloud performance sets ---
 const SET_URL = 'https%3A%2F%2Fsoundcloud.com%2Fsamcclement%2Fperformance-set-1';
 const SET2_URL = 'https%3A%2F%2Fsoundcloud.com%2Fsamcclement%2Fperformance-set-2-1';
+const SET3_URL = 'https%3A%2F%2Fsoundcloud.com%2Fsamcclement%2Fperformance-set-3';
 function playerSrc(track: string): string {
   return (
     'https://w.soundcloud.com/player/?url=' +
@@ -67,6 +68,23 @@ const SETS = [
       'Jorja Smith - Feelings (David Mackay Remix)',
       'Drake, Rihanna - Take Care (Moojo Remix)',
       'HUGEL - Patadas de Ahogado - LATÍN MAFIA, HUMBE (Extended Rework)',
+    ],
+  },
+  {
+    side: 'performance set 3',
+    meta: 'Live set',
+    track: SET3_URL,
+    tracks: [
+      'David Mackay - Better (Rework)',
+      "Drake - Flight's Booked (Samm Edit)",
+      'SVNTOS - Relax my eyes (remix)',
+      'Dancing on Lego - I Just Want You To Smile (Original Mix)',
+      'Kanye West - Love Lockdown (Vidojean X Oliver Loenn Afro House Remix)',
+      'Anton Khabbaz - Break From It (Extended Mix)',
+      "The Weeknd - Creepin' [Hoax (BE) & INMAHEAD Remix]",
+      '&ME, Rampa, Adam Port, Keinemusik, Sevdaliza - See You Again (Original Mix)',
+      'Boys Noize, &ME, Rampa, Adam Port, Keinemusik, Vinson - Crazy For It (feat. Vinson)',
+      'UNKLE, &ME, Keinemusik - Only You (&ME Remix)',
     ],
   },
 ];
